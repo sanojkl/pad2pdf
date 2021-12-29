@@ -1,5 +1,6 @@
 import re  # extract pad title from baseurl
 from requests import get  # download pad content
+from html import unescape
 
 
 def getTitleFromBaseUrl(baseurl):
@@ -17,16 +18,11 @@ def baseURLcleanup(baseurl):
     return baseurl.rstrip("/")
 
 
-def dl(url: str, title: str) -> str:
+def dl(url: str,) -> str:
     """returns the content of a pad link as html"""
     if __debug__:
         print("Working on " + url)
     # expand url to get the txt version
     url = url + "/export/html"
-    content = get(url).content
-    return str(content)
-    # save downloaded content
-    # filename = "./temp.txt"
-    # with open(filename, "wb") as saveFile:
-    #     saveFile.write(content)
-    #     print("  Pad saved under " + filename)
+    padcont = get(url).text
+    return unescape(padcont)

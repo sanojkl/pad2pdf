@@ -18,11 +18,13 @@ def pad2pdf(padurl: str, style: int, workingdir: str) -> None:
     padurl = baseURLcleanup(padurl)
     title = getTitleFromBaseUrl(padurl)
     filename = getFileName(workingdir, title)
-    content = dl(padurl, title)
+    content = dl(padurl)
+    if __debug__:
+        print(content, "\n\n")
+    content = saveTex(content, style)
     if __debug__:
         print(content)
-    content = saveTex(filename, content, style)
-    TexToPDF(filename)
+    TexToPDF(filename, content)
 
 # TODO: set invalid file names
 

@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# temp folder
+temp/*.pdf
+temp/*.tex
