@@ -1,0 +1,92 @@
+body {
+  color: white;
+  font-family: Jost;
+  height: 100%;
+  text-align: left;
+  background: #1B7340 url(https://fffbw.de/ctf/erde_hell.svg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 120% 20%;
+  background-size: 120%;
+}
+html {
+  height: 90%;
+}
+h1 {
+  font-size: 24pt;
+}
+p {
+  font-size: 16pt;
+}
+img {
+ width:45%;
+ height:auto;
+}
+
+#genrate {
+  font-size: 24pt;
+  padding: 0.5em;
+  padding-left:2em;
+  padding-right:2em;
+  background-color: #FF005C;
+}
+#generate:hover {
+  background-color: #e60054;
+}
+.special-link, button {
+  background: #1b9844;
+  color: white !important;
+  padding: 10px;
+  text-transform: inherit;
+  border: none;
+  letter-spacing: normal;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1em;
+  display: inline-block;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  box-shadow: 6px 6px 0px 0px #186739;
+  -webkit-box-shadow: 6px 6px 0px 0px #186739;
+  text-decoration:none;
+  margin: 0.5em 0.5em 0.5em 0;
+}
+.special-link:hover, button:hover {
+    background-color: #90D3ED;
+}
+
+#footer {
+  right: 1em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+}
+@media (min-device-width: 577px){
+    #footer{
+      position:fixed;
+      bottom:16px;
+      text-align: right;
+    }
+}
+@media (max-device-width: 576px){
+    #footer{
+      position:static;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: no-wrap;
+      justify-content: center;
+    }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  min-height: 100%;
+  z-index: 10;
+}

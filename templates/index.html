@@ -1,0 +1,41 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+   <meta name="keywords" content=""/>
+   <link rel="stylesheet" href="main.css" type="text/css" charset="utf-8" class="">
+   <title>Pad2Pdf</title>
+  </head>
+  <body>
+   <div class="flex-container">
+    <div>
+    <!--content-->
+     <h1>Pad2Pdf</h1>
+     <form method="post" action="/generate">
+	  <!--pad-->
+	  <label for="pad"><b>Padlink:</b></label><br/>
+	  <input type="text" id="pad" name="pad"><br/><br/>
+     <!--style-->
+	  <label for="style"><b>Design:</b></label><br/>
+	  <select id="style"name="style">
+	   <option value="0">Blanko</option>
+    </select><br/><br/>
+    <label for="numbers"><b>Kapitel nummerieren</b></label>
+    <input type="checkbox" id="numbers" name="numbers"><br/><br/>
+    <label for="contenttable"><b>Inhaltsverzeichnis</b></label>
+    <input type="checkbox" id="contenttable name="contenttable"><br/><br/>
+    <label for="comments"><b>Kommentare mit einbeziehen</b></label>
+    <input type="checkbox" id="comments" name="comments"><br/><br/>
+	  <input type="submit"  class="special-link" id="generate" name="submit"/>
+	 </form>
+	 <br/>
+    </div>
+   </div>
+   <div id="footer">
+    <a class="special-link" href="https://kleinjonas.de/impressum">Impressum</a>
+    <a class="special-link" href="https://kleinjonas.de/datenschutz">Datenschutz</a>
+   </div>
+  </body>
+</html>

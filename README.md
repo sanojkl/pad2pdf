@@ -22,12 +22,15 @@ options:
   -f COMMENTS, --footnote COMMENTS
                         whether comments in pad should turn into foodnotes
 ## dependencies
+python 3.10
+pylatex module
 - Lualatex
 - noto color emoji
 ## Roadmap
 TODO: comment handeling
 TODO: create templates
 TODO: generate webfrontend
+TODO: Error handling if no pad link provided
 
 
 ### Thanks to 
