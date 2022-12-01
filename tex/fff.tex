@@ -1,0 +1,175 @@
+% Template for Fridays For Future Designed Documets
+% Template Jonas Klein, 2022
+\documentclass[a4paper,
+  ]{scrartcl}
+\usepackage[
+  top=0pt,
+  bottom=1.5cm,
+  left=1.5cm,
+  right=1.5cm,
+  headheight=1.5cm,
+  footskip=35pt,
+  headsep=20pt,
+  includeheadfoot
+]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage{parskip} % avoid space with new paragraphs
+
+
+
+% COLORED SECTIONS
+\usepackage{xcolor}
+\usepackage{lipsum}
+\definecolor{fffgreen}{HTML}{1DA64A}
+\definecolor{fffdgreen}{HTML}{1B7340}
+\definecolor{ffflgreen}{HTML}{DAEFD3}
+
+\addtokomafont{section}{\mysection}
+\newcommand{\mysection}[1]{%
+    \setlength{\fboxsep}{0cm}%already boxed
+    
+    \colorbox{fffdgreen!80}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{5pt}%Space before
+            \color{white}
+            #1
+            \vspace*{5pt}%Space after
+        \end{minipage}%
+}}
+% subsection
+
+\addtokomafont{subsection}{\mysectionb}
+\newcommand{\mysectionb}[1]{%
+    \setlength{\fboxsep}{0cm}%already boxed
+    
+    \colorbox{fffgreen!80}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{5pt}%Space before
+            \color{white}
+            #1
+            \vspace*{5pt}%Space after
+        \end{minipage}%
+}}
+
+% subsubsection
+
+\addtokomafont{subsubsection}{\mysectionc}
+\newcommand{\mysectionc}[1]{%
+    \setlength{\fboxsep}{0cm}%already boxed
+    
+    \colorbox{ffflgreen!80}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{2pt}%Space before
+            #1
+            \vspace*{2pt}%Space after
+        \end{minipage}%
+}}
+
+% make links green
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=fffgreen,      
+    urlcolor=fffgreen,
+    }
+
+% header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{overpic}
+\newcommand{\custompagemark}{
+  \begin{overpic}[scale=1,,tics=10]
+    {pagecount.png}
+    \put(10,50){\color{white}{\thepage}}
+  \end{overpic}
+}
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\custompagemark}
+\fancyheadoffset[L]{\dimexpr\oddsidemargin+1in\relax}
+
+% for Information symbols
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Properties %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% just for about in pdf doc
+\author{FFF}
+\title{Strupa}
+\subtitle{moinmoin}
+\date{\today}
+% Comment out for no version numbers
+\newcommand{\docversion}{StruPa v2.11 (\today)}
+\fancyfoot[L]{{\color{fffgreen}\docversion}}
+
+\begin{document}
+% place logo big in the middle
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{Logo.png}
+\end{center}
+
+
+% logo in the left Floating parallell to text
+% for compact layout without table of contents
+
+%\begin{wrapfigure}{r}{0pt}
+%    \includegraphics[width=4.5 cm]{Logo.png}
+%\end{wrapfigure}
+
+% Comment out if no table of contents needed or if you set it later manually
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Strupa}
+Dies hier ist ein Beispieltext, links werden auch entsprechend \href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{grün Angezeigt}. Das geht auch wenn man die \url{https://www.youtube.com/watch?v=dQw4w9WgXcQ} direkt eingibt.
+\subsection{Strupa2}
+\subsubsection*{ (A) Strupa3}
+
+TODO: Symbole
+
+text
+
+\begin{wrapfigure}[2]{l}{0pt}
+    \includegraphics[scale=1.8]{Fragezeichen-Hand.png}
+\end{wrapfigure}
+
+% \begin{overpic}[scale=.25,,tics=10]
+%     {picture}
+%     \put(20,60){\huge Poolkatze}
+% \end{overpic}
+
+
+TODO: SChriftart
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+
+\end{document}
