@@ -19,7 +19,7 @@
 % xelatex or lualatex needed for fontspec
 % maybe the font file have to be installed
 \usepackage{fontspec}
-\setmainfont[Ligatures=TeX]{Jost-Regular}
+\setmainfont[Ligatures=TeX, ItalicFont={Jostitalic}]{Jost}
 
 
 % COLORED SECTIONS
@@ -41,6 +41,7 @@
             \vspace*{5pt}%Space after
         \end{minipage}%
 }}
+
 % subsection
 
 \addtokomafont{subsection}{\mysectionb}
@@ -65,16 +66,34 @@
     \colorbox{ffflgreen!100}{%
         \begin{minipage}{\linewidth}%
             \vspace*{2pt}%Space before
-            \MakeUppercase{#1}
+            \textnormal{
+              \MakeUppercase{#1}
+            }
             \vspace*{2pt}%Space after
         \end{minipage}%
 }}
+
+% parallel text
+\newcommand{\paralleltext}[2]{
+\begin{tabularx}{\textwidth}{X X}
+
+#1 & #2 \\
+\end{tabularx}
+}
+
+% parallel text 3 columns
+\newcommand{\paralleltextthreecolums}[3]{
+\begin{tabularx}{\textwidth}{X X X}
+
+#1 & #2 & #3 \\
+\end{tabularx}
+}
 
 % make links green
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=black,
+    linkcolor=fffgreen,
     filecolor=fffgreen,      
     urlcolor=fffgreen,
     }
@@ -103,22 +122,36 @@
 
 \newcommand{\announcement}[1]{%
 \begin{tabularx}{\textwidth}{p{1.5cm}X}
-\centering\includegraphics[width=1.5cm]{Lautsprecher.png} & #1 \\
+\centering\includegraphics[width=1.5cm]{Lautsprecher.png} & \textit{#1} \\
 \end{tabularx}
 }
 \newcommand{\hint}[1]{%
 \begin{tabularx}{\textwidth}{p{1.5cm}X}
-\centering\includegraphics[width=1.3cm]{Fragezeichen-Hand.png} & #1 \\
+\centering\includegraphics[width=1.3cm]{Fragezeichen-Hand.png} & \textit{#1} \\
 \end{tabularx}
 }
 
-\newcommand{\paralleltext}[2]{\\
-\begin{tabularx}{\textwidth}{X X}
-  
-#1 & #2 \\
-\end{tabularx}
-}
+% for nice table of contents with seperate heading
+\usepackage{tocloft}
+\makeatletter
+\renewcommand{\@cftmaketoctitle}{}
+\makeatother
 
+\renewcommand{\thesubsubsection}{(\Alph{subsubsection})}
+\renewcommand{\autodot}{} % removes dot in chapter numbering
+
+% for enumerate
+\renewcommand{\theenumi}{(\arabic{enumi})}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\theenumiii}{(\roman{enumiii})}
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\labelenumiii}{\theenumiii}
+
+\renewcommand\labelitemi{--}
+
+% for checkmark
+\usepackage{amssymb}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Properties %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,6 +190,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 \announcement{Dies sind ausdrücklich Leitlinien, Richtlinien oder Grundsätze und keine festen Regeln. Das Symbol soll möglichst unsere Werte abbilden – wo wollen wir hin, wie möchten wir gemeinsam Aktivismus betreiben?}
 Lorem ipsum dolor sit amet, consetetur sadipscing eli dsgdfgtr, gdfiajsed jidoigsuifgujdiam
+
 \paralleltext{
   Die OG legt vor Ablauf der Rückmeldefrist einer OG-Abstimmung oder einer dringenden Abstimmung ein Veto ein. Das Veto muss formal eine Begründung unter Beantwortung folgender Fragen enthalten:
 }{
